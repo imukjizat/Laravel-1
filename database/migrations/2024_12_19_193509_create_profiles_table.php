@@ -12,7 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('profiles', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->text('biodata');
+            $table->integer('age');
+            $table->text('address')->nullable();
+            $table->string('avatar', 255)->nullable();
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
