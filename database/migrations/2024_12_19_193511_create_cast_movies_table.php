@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cast_movies', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->uuid('movie_id');
+            $table->uuid('cast_id');
+            $table->foreign('movie_id')->references('id')->on('movies');
+            $table->foreign('cast_id')->references('id')->on('casts');
             $table->timestamps();
         });
     }
