@@ -15,7 +15,7 @@ class ReviewSeeder extends Seeder
 
         $movieInceptionId = DB::table('movies')->where('title', 'Inception')->value('id');
         $movieHangoverId = DB::table('movies')->where('title', 'The Hangover')->value('id');
-        $moviePursuitofHappynessId = DB::table('movies')->where('title', 'Pursuit of Happyness')->value('id');
+        $moviePursuitofHappynessId = DB::table('movies')->where('title', 'The Pursuit of Happyness')->value('id');
 
         DB::table('reviews')->insert([
             [
