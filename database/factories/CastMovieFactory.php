@@ -11,8 +11,8 @@ class CastMovieFactory extends Factory
     {
         return [
             'id' => Uuid::uuid4()->toString(),
-            'movie_id' => null, // Nanti disesuaikan melalui relasi di Seeder
-            'cast_id' => null, // Nanti disesuaikan melalui relasi di Seeder
+            'movie_id' => null,
+            'cast_id' => null,
         ];
     }
 }
