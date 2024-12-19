@@ -25,6 +25,13 @@ class CastSeeder extends Seeder
                 'biodata' => 'Known for his roles in hit comedies.',
                 'avatar' => 'bradley.jpg',
             ],
+            [
+                'id' => Uuid::uuid4()->toString(),
+                'name' => 'Will Smith',
+                'age' => 55,
+                'biodata' => 'Famous for his roles in action films and comedies.',
+                'avatar' => 'will_smith.jpg',
+            ],
         ]);
     }
 }
