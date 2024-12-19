@@ -3,21 +3,19 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Ramsey\Uuid\Uuid;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Profile>
- */
 class ProfileFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'id' => Uuid::uuid4()->toString(),
+            'biodata' => $this->faker->text(200),
+            'age' => $this->faker->numberBetween(18, 65),
+            'address' => $this->faker->address(),
+            'avatar' => $this->faker->imageUrl(),
+            'user_id' => null,
         ];
     }
 }
