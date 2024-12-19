@@ -3,21 +3,18 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Ramsey\Uuid\Uuid;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CastMovie>
- */
-class CastMovieFactory extends Factory
+class CastFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'id' => Uuid::uuid4()->toString(),
+            'name' => $this->faker->name(),
+            'age' => $this->faker->numberBetween(20, 70),
+            'biodata' => $this->faker->text(200),
+            'avatar' => $this->faker->imageUrl(),
         ];
     }
 }
