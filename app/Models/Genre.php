@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Genre extends Model
 {
     use HasFactory;
+
+    protected $keyType = 'string';
+    public $incrementing = false;
+
+    protected $fillable = ['name'];
+
+    public function movies()
+    {
+        return $this->hasMany(Movie::class);
+    }
 }
