@@ -12,7 +12,7 @@ class CastMovieSeeder extends Seeder
     {
         $movieInceptionId = DB::table('movies')->where('title', 'Inception')->value('id');
         $movieHangoverId = DB::table('movies')->where('title', 'The Hangover')->value('id');
-        $moviePursuitofHappynessId = DB::table('movies')->where('title', 'Pursuit of Happyness')->value('id');
+        $moviePursuitofHappynessId = DB::table('movies')->where('title', 'The Pursuit of Happyness')->value('id');
 
         $castLeoId = DB::table('casts')->where('name', 'Leonardo DiCaprio')->value('id');
         $castBradleyId = DB::table('casts')->where('name', 'Bradley Cooper')->value('id');
