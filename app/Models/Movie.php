@@ -12,7 +12,7 @@ class Movie extends Model
     protected $keyType = 'string';
     public $incrementing = false;
 
-    protected $fillable = ['title', 'synopsis', 'poster', 'year', 'available', 'genre_id'];
+    protected $fillable = ['id', 'title', 'synopsis', 'poster', 'year', 'available', 'genre_id'];
 
     public function genre()
     {
