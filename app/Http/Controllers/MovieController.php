@@ -10,12 +10,22 @@ use Illuminate\Support\Str;
 
 class MovieController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $movies = Movie::with('genre')->get();
+        $genreId = $request->get('genre');
         $genres = Genre::all();
-        return view('movies.index', compact('movies', 'genres'));
+
+        $movies = Movie::with('genre')
+            ->when($genreId, function ($query, $genreId) {
+                return $query->where('genre_id', $genreId);
+            })
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('movies.index', compact('movies', 'genres', 'genreId'));
     }
+
+
 
     public function create()
     {
@@ -29,7 +39,7 @@ class MovieController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:255',
             'synopsis' => 'required|string',
-            'poster' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+            'poster' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
             'year' => 'required|integer|min:1900|max:' . date('Y'),
             'genre_id' => 'required|exists:genres,id',
             'available' => 'nullable|boolean',
@@ -43,7 +53,6 @@ class MovieController extends Controller
             $validatedData['poster'] = 'images/' . $fileName;
         }
 
-
         $validatedData['id'] = (string) Str::uuid();
 
         Movie::create($validatedData);
@@ -56,20 +65,35 @@ class MovieController extends Controller
     public function edit(Movie $movie)
     {
         $genres = Genre::all();
-        return view('movies.form', compact('movie', 'genres'));
+        return response()->json(['movie' => $movie, 'genres' => $genres]);
     }
 
     public function update(Request $request, Movie $movie)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'title' => 'required|string|max:255',
-            'year' => 'required|integer',
-            'genre_id' => 'required|uuid|exists:genres,id',
+            'synopsis' => 'required|string',
+            'poster' => 'nullable|image|mimes:jpeg,png,jpg|max:5120',
+            'year' => 'required|integer|min:1900|max:' . date('Y'),
+            'genre_id' => 'required|exists:genres,id',
+            'available' => 'nullable|boolean',
         ]);
 
-        $movie->update($request->all());
-        return redirect()->route('movies.index')->with('success', 'Movie updated successfully.');
+        if ($request->hasFile('poster')) {
+            $file = $request->file('poster');
+            $fileName = str_replace(' ', '_', $validatedData['title']) . '.' . $file->getClientOriginalExtension();
+            $folder = public_path('images/');
+            $file->move($folder, $fileName);
+            $validatedData['poster'] = 'images/' . $fileName;
+        }
+
+        $movie->update($validatedData);
+
+        return redirect()->route('movies.index')->with('success', 'Movie updated successfully!');
     }
+
+
+
 
     public function destroy(Movie $movie)
     {

@@ -9,7 +9,7 @@ class CastMovie extends Model
 {
     use HasFactory;
 
-    protected $table = 'cast_movies'; // Nama tabel pivot
+    protected $table = 'cast_movies';
     protected $keyType = 'string';
     public $incrementing = false;
 
