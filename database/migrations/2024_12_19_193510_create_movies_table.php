@@ -16,7 +16,7 @@ return new class extends Migration
             $table->year('year');
             $table->boolean('available')->default(true);
             $table->uuid('genre_id');
-            $table->foreign('genre_id')->references('id')->on('genres');
+            $table->foreign('genre_id')->references('id')->on('genres')->onDelete('cascade');
             $table->timestamps();
         });
     }

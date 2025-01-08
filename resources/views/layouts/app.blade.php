@@ -27,7 +27,7 @@
 </header>
 
 
-<main class="min-h-screen mx-auto mt-8">
+<main class="min-h-screen flex flex-col items-start mx-auto">
     @yield('content')
 </main>
 

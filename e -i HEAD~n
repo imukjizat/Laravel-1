@@ -1,0 +1,58 @@
+[33m1a09fa9[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m Final
+[33m5a8e4aa[m CRUD-2
+[33mee93890[m Merge branch 'main' of https://github.com/imukjizat/Laravel-1
+[33m8a7fce6[m Done
+[33m58fead8[m Update README.md
+[33m568e9b7[m Update README.md
+[33me4cdd23[m Menrapihkan dan menyesuaikan kode untuk CRUD-1
+[33m7488a5d[m Mengedit header
+[33mc591bcc[m Menyesuaikan routes dan menambahkan movie controllers
+[33m1c2d10a[m Menambahkan file form untuk create/edit movie
+[33m9feaeea[m Menambahkan folder movie dan menambahkan file index
+[33m2cce364[m Menambahkan file app.blade.php di layout
+[33m3990b2d[m Menambahkan file layouts untuk header dan footer flowbite
+[33me267eaa[m Menghapus file book controller, dan undo routes
+[33mf156b1e[m Menyesuaikan routes
+[33m5b13771[m Menambahakan controller book
+[33m7cbda33[m Menyesuaikan Cast Movie Seeder
+[33m3290b9f[m Menyesuaikan Review Seeder
+[33mee6bd36[m Menyesuaikan Profile Seeder
+[33ma2ff306[m Menyesuaikan User Seeder
+[33m0736516[m Menyesuaikan Review Factory
+[33mc324336[m Menyesuaikan Cast Factory
+[33m0cc8528[m Menyesuaikan Cast Movie Factory
+[33mcb1a6f2[m Menyesuaikan Cast Factory
+[33mcdc425c[m Menyesuaikan Cast Factory
+[33mf48e0b7[m Menyesuaikan Movie Factory
+[33m71d460c[m Menyesuaikan Genre Factory
+[33me2434d7[m Menyesuaikan Profil Factory
+[33m6f95016[m Menyesuaikan User Factory
+[33m28fb1a9[m Menyesuaikan Role Factory
+[33me94ce29[m Menyesuaikan Review Seeder
+[33m8be6f15[m Menyesuaikan Cast dan Cast Movie Seeder
+[33m6b9ccdc[m Menyesuaikan Cast Seeder
+[33me14c093[m Menyesuaikan Movie Seeder
+[33m3c2ebb3[m Menyesuaikan Profile Seeder
+[33m3843636[m Menyesuaikan User Seeder
+[33mc438ea1[m Menyesuaikan Genre Seeder
+[33m87fa722[m Menyesuaikan Role Seeder
+[33m55a207b[m Menambahkan beberapa seeder
+[33ma24b5e1[m Menambahkan beberapa factory
+[33m4ac2a9f[m Menyesuikan model cast movie
+[33mff34fad[m Menyesuikan model review
+[33m9c6caff[m Menyesuikan model cast
+[33m674bcff[m Menyesuikan model genre
+[33m2e7e891[m Menyesuikan model movie
+[33m72d3150[m Menyesuikan model profile
+[33m4bfaebc[m Menyesuikan model role
+[33m8261c20[m Menyesuikan model user
+[33m14813e2[m Menyesuikan migrasi review
+[33mc43a8f1[m Menyesuikan migrasi cast movies
+[33mf471b3d[m Menyesuikan cast genres
+[33m204f8e5[m Menyesuikan migrasi genres
+[33mcb9233e[m Menyesuikan migrasi movies
+[33m1256a45[m Menyesuikan migrasi profiles
+[33m1f20b79[m Menyesuikan migrasi users
+[33m9856f42[m Menyesuikan migrasi role
+[33m3ba5d76[m Menambahkan beberapa model untuk menyesuaikan tugas
+[33m81cc8ea[m First commit

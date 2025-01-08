@@ -14,8 +14,8 @@ return new class extends Migration
             $table->tinyInteger('rating')->unsigned()->check('rating >= 1 and rating <= 5');
             $table->uuid('user_id');
             $table->uuid('movie_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('movie_id')->references('id')->on('movies');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('movie_id')->references('id')->on('movies')->onDelete('cascade');
             $table->timestamps();
         });
     }

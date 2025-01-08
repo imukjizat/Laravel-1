@@ -9,11 +9,13 @@ return new class extends Migration
 
     public function up(): void
     {
-        Schema::create('roles', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->string('name', 255);
-            $table->timestamps();
-        });
+        if (!Schema::hasTable('roles')) {
+            Schema::create('roles', function (Blueprint $table) {
+                $table->uuid('id')->primary();
+                $table->string('name', 255);
+                $table->timestamps();
+            });
+        }
     }
 
     public function down(): void

@@ -4,10 +4,10 @@
 
 @section('content')
 
-<section class="container my-24 mx-auto">
+<section class="container mt-16 mx-auto">
     <div class="flex justify-between px-20">
         <!-- Filter Categories -->
-        <div class="flex items-center justify-center py-4 md:py-8 gap-4 flex-wrap">
+        <div class="flex items-center py-4 md:py-8 gap-4 flex-wrap">
             <a href="{{ route('movies.index') }}" 
                class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-bold text-base rounded-full px-6 py-3 shadow-lg hover:scale-105 hover:from-indigo-500 hover:to-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-300 active:scale-95 transition transform">
                All categories
@@ -21,7 +21,7 @@
         </div>
         
         <!-- Add Film Button -->
-        <div class="flex items-center justify-center py-4 md:py-8 flex-wrap gap-4">
+        <div class="flex items-center py-4 md:py-8 flex-wrap gap-4">
           <button
             class="text-white hover:text-white border border-blue-600 bg-blue-700 hover:bg-blue-500 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center"
             onclick="openModalCreate()">
@@ -104,17 +104,11 @@
             </div>
         </div>
         @empty
-        <div class="flex items-center justify-center h-96 text-center text-white">
-            <div>
-                <h1 class="text-xl font-bold">No movies found</h1>
-                <p>We couldn't find any movies that matched your search.</p>
-                <button
-                    class="mt-4 px-5 py-2 text-white bg-blue-500 rounded-lg shadow-lg hover:bg-blue-600 transition">
-                    Add a movie
-                </button>
-            </div>
+        <div class="col-span-full text-center py-12 text-gray-600 dark:text-gray-300">
+            <p class="text-lg font-semibold">No movies found</p>
+            <p>We couldn't find any movies that matched your search.</p>
         </div>
-        @endforelse
+        @endforelse        
     </div>
 
 </section>
