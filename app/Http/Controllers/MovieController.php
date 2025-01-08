@@ -7,12 +7,12 @@ use App\Models\Genre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-
 class MovieController extends Controller
 {
     public function index(Request $request)
     {
         $genreId = $request->get('genre');
+
         $genres = Genre::all();
 
         $movies = Movie::with('genre')
@@ -24,8 +24,6 @@ class MovieController extends Controller
 
         return view('movies.index', compact('movies', 'genres', 'genreId'));
     }
-
-
 
     public function create()
     {
@@ -60,12 +58,10 @@ class MovieController extends Controller
         return redirect()->route('movies.index')->with('success', 'Movie created successfully!');
     }
 
-
-
     public function edit(Movie $movie)
     {
         $genres = Genre::all();
-        return response()->json(['movie' => $movie, 'genres' => $genres]);
+        return response()->json(['movie' => $movie->load('genre'), 'genres' => $genres]);
     }
 
     public function update(Request $request, Movie $movie)
@@ -91,9 +87,6 @@ class MovieController extends Controller
 
         return redirect()->route('movies.index')->with('success', 'Movie updated successfully!');
     }
-
-
-
 
     public function destroy(Movie $movie)
     {
